@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="103">
+    <author>Achimobil</author>
+    <version>1.1.0.0</version>
+
+    <title>
+        <de>Fortgeschrittener Mechaniker</de>
+        <en>Advanced Mechanic</en>
+    </title>
+
+    <description>
+        <de><![CDATA[später
+
+
+Upload auf anderen Seiten außer dem ModHub ist verboten und somit illegal, Verlinkung nur mit Original-Downloadlink. KEIN Ersatzlink!
+Das Verändern oder erneutes Hochladen, ob ganz oder in Teilen, ist nicht gestattet!
+
+Fehler und Anregungen gerne auf <a href="https://github.com/Achimobil/FS25_AdvancedMechanic">GitHub</a>
+]]></de>
+        <en><![CDATA[later
+
+Uploading to sites other than ModHub is prohibited and therefore illegal, linking only with original download link. NO substitute link!
+Modifying and re-uploading in whole or in part is not allowed!
+
+Bugs and suggestions welcome on <a href="https://github.com/Achimobil/FS25_AdvancedMechanic">GitHub</a>.
+]]></en>
+    </description>
+
+    <multiplayer supported="true"/>
+    <iconFilename>icon_advancedMechanic.png</iconFilename>
+
+    <extraSourceFiles>
+        <sourceFile filename="productionInfoHud.lua"/>
+    </extraSourceFiles>
+</modDesc>
