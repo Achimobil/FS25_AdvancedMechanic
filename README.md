@@ -1,5 +1,7 @@
 # FS25_AdvancedMechanic
-later
+With this mod, you get an advanced mechanic.
+This mechanic used to be a gearbox specialist and loves tinkering with them.
+This makes your gearboxes 30% more efficient and makes it easier and faster to shift gears.
 
 # ModHub
 comming soon
