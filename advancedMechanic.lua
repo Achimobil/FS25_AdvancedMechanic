@@ -12,7 +12,7 @@ No copy and use in own mods allowed.
 
 Das verändern und wiederöffentlichen, auch in Teilen, ist untersagt und wird abgemahnt.
 ]]
-Logging.devInfo("AdvancedMechanic");
+Logging.info("AdvancedMechanic");
 AdvancedMechanic = {};
 
 -- Change torque multiplicator here
@@ -26,7 +26,7 @@ function AdvancedMechanic:loadFinished(superFunc)
     local xmlFile = self.xmlFile;
     local rootName = xmlFile:getRootName();
 
-    Logging.devInfo("AdvancedMechanic:loadFinished for %s", xmlFile.filename);
+    Logging.info("AdvancedMechanic:loadFinished for %s", xmlFile.filename);
 
     -- alle mit TransmissionType DEFAULT anpassen auf schnelles schalten
     xmlFile:iterate(rootName..".motorized.motorConfigurations.motorConfiguration",function(_, key)
@@ -49,7 +49,7 @@ function AdvancedMechanic:loadFinished(superFunc)
 
     -- Drehmoment aller Motoren erhöhen
     xmlFile:iterate(rootName..".motorized.motorConfigurations.motorConfiguration",function(_, key)
-        AdvancedMechanic.ChangeXmlValueByMultiplicator(xmlFile, key..".motor#torqueScale", AdvancedMechanic.torqueScaleMultiplicator);
+        AdvancedMechanic.ChangeXmlValueByMultiplicator(xmlFile, key..".motor#torqueScale", AdvancedMechanic.torqueScaleMultiplicator, "vehicle.motorized.motorConfigurations.motorConfiguration(0).motor#torqueScale");
     end)
 
     superFunc(self);
@@ -59,10 +59,17 @@ end
 -- @param XMLFile xmlFile File to modify
 -- @param string path Path to manipulate in the xmlFile
 -- @param number multiplicator The Multiplicator to use
-function AdvancedMechanic.ChangeXmlValueByMultiplicator(xmlFile, path, multiplicator)
+-- @param string fallbackPath Path to read when normal path is nil
+function AdvancedMechanic.ChangeXmlValueByMultiplicator(xmlFile, path, multiplicator, fallbackPath)
     local oldValue = xmlFile:getValue(path);
+    if oldValue == nil then
+        oldValue = xmlFile:getValue(fallbackPath);
+    end
+    if oldValue == nil then
+        Logging.warning("AdvancedMechanic path not found '%s' and '%s'", path, fallbackPath);
+    end
     local newValue = oldValue * multiplicator;
-    Logging.devInfo("AdvancedMechanic Change '%s' from %s to %s", path, oldValue, newValue);
+    Logging.info("AdvancedMechanic Change '%s' from %s to %s", path, oldValue, newValue);
     xmlFile:setValue(path, newValue);
 end
 
