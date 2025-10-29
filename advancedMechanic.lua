@@ -26,7 +26,7 @@ function AdvancedMechanic:loadFinished(superFunc)
     local xmlFile = self.xmlFile;
     local rootName = xmlFile:getRootName();
 
-    Logging.info("AdvancedMechanic:loadFinished for %s", xmlFile.filename);
+--     Logging.info("AdvancedMechanic:loadFinished for %s", xmlFile.filename);
 
     -- alle mit TransmissionType DEFAULT anpassen auf schnelles schalten
     xmlFile:iterate(rootName..".motorized.motorConfigurations.motorConfiguration",function(_, key)
@@ -35,13 +35,13 @@ function AdvancedMechanic:loadFinished(superFunc)
         if transmissionGroupType == "DEFAULT" then
 
             local transmissionGroupTimeKey = key..".transmission.groups#changeTime";
-            xmlFile:setValue(transmissionGroupTimeKey, 10);
+            xmlFile:setValue(transmissionGroupTimeKey, 100);
 
             local transmissionAutoGearChangeTimeKey = key..".transmission#autoGearChangeTime";
-            xmlFile:setValue(transmissionAutoGearChangeTimeKey, 10);
+            xmlFile:setValue(transmissionAutoGearChangeTimeKey, 100);
 
             local transmissionGearChangeTimeKey = key..".transmission#gearChangeTime";
-            xmlFile:setValue(transmissionGearChangeTimeKey, 10);
+            xmlFile:setValue(transmissionGearChangeTimeKey, 100);
 
             Logging.info("AdvancedMechanic changed to fast shift for %s", xmlFile.filename);
         end

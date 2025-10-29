@@ -4,6 +4,7 @@
     <projectSources>
         <source path="D:/Achim/source/repos/FS25_AdvancedMechanic/" />
         <source path="D:/Achim/source/repos/FS25_GiantsStudioReferences/" />
+        <source path="E:/LS25Profile/LS25ModTest/mods/" />
     </projectSources>
     <excludePaths>
     </excludePaths>
