@@ -12,7 +12,7 @@ No copy and use in own mods allowed.
 
 Das verändern und wiederöffentlichen, auch in Teilen, ist untersagt und wird abgemahnt.
 ]]
-Logging.info("AdvancedMechanic");
+-- Logging.info("AdvancedMechanic");
 AdvancedMechanic = {};
 
 -- Change torque multiplicator here
@@ -43,7 +43,7 @@ function AdvancedMechanic:loadFinished(superFunc)
             local transmissionGearChangeTimeKey = key..".transmission#gearChangeTime";
             xmlFile:setValue(transmissionGearChangeTimeKey, 100);
 
-            Logging.info("AdvancedMechanic changed to fast shift for %s", xmlFile.filename);
+--             Logging.info("AdvancedMechanic changed to fast shift for %s", xmlFile.filename);
         end
     end)
 
@@ -69,7 +69,7 @@ function AdvancedMechanic.ChangeXmlValueByMultiplicator(xmlFile, path, multiplic
         Logging.warning("AdvancedMechanic path not found '%s' and '%s'", path, fallbackPath);
     end
     local newValue = oldValue * multiplicator;
-    Logging.info("AdvancedMechanic Change '%s' from %s to %s", path, oldValue, newValue);
+--     Logging.info("AdvancedMechanic Change '%s' from %s to %s", path, oldValue, newValue);
     xmlFile:setValue(path, newValue);
 end
 
