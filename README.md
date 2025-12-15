@@ -4,7 +4,7 @@ This mechanic used to be a gearbox specialist and loves tinkering with them.
 This makes your gearboxes 30% more efficient and makes it easier and faster to shift gears.
 
 # ModHub
-comming soon
+https://www.farming-simulator.com/mod.php?mod_id=341991&title=fs2025
 
 # Build my Mods self
 Deutsche Anleitung: https://youtu.be/qG8wNBkjB3w
